@@ -1,0 +1,15 @@
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/inaminehiroyuki/.rbenv/versions/2.6.3/bin/ruby -I /Users/inaminehiroyuki/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200408-48415-1eu7ug8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20200408-48415-11sxwav/skiptrace/internal
