@@ -1,24 +1,14 @@
-# README
+# rails_sns
+Ruby on Rails を使って簡易SNS制作。練習用。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 機能
+・　新規登録、ログイン、ログアウト
+・　つぶやき投稿、いいね、コメント
+・　フラッシュメッセージ
+・　フォロー、フォロワー
+・　つぶやき検索
 
-Things you may want to cover:
+# その他
+・　RSpec　を使ってテストを書く。
+・　出来たらHeroku を使ってデプロイする。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
