@@ -12,6 +12,11 @@ Ruby on Rails を使って簡易SNS制作。練習用。
 
 ・　つぶやき検索
 
+# 参考教材
+・　Rails Tutorial
+
+・　「Ruby on Rails 5 速習実践ガイド」
+
 # その他
 ・　RSpec　を使ってテストを書く。
 
