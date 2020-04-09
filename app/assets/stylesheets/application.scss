@@ -1,1 +1,20 @@
 @import "bootstrap";
+
+.container {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+.top-content {
+    margin-top: 10%;
+    padding-top: 30px;
+    .top-list {
+        li {
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+    }
+}
