@@ -1,2 +1,19 @@
-h1 Users#new
-p Find me in app/views/users/new.html.slim
+h1.page-title 新規登録
+
+.nav.justify-content-end
+    = link_to 'ユーザー一覧', users_path, class: 'nav-link'
+
+= form_with model: @user, local: true do |f|
+    .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', id: 'user_name'
+    .form-group
+        = f.label :mail
+        = f.text_field :mail, class: 'form-control', id: 'user_mail'
+    .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control', id: 'user_password'
+    .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'form-control', id: 'user_password_confirmation'
+    = f.submit nil, class: 'btn btn-primary'

@@ -10,5 +10,9 @@ html
   body
   .navbar.navbar-dark.bg-dark
     .navbar-brand RailsSNS
+    ul.navbar-nav.ml-auto
+      li.nav-item= link_to '新規登録', new_user_path, class: 'btn btn-primary'
   .container
+    - if flash.notice.present?
+      .alert.alert-success= flash.notice
     = yield
