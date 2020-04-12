@@ -16,10 +16,11 @@ li {
     }
 }
 
-.form-group {
-    margin-top: 50px;
-}
-
 .page-title {
     color: rgba(15, 15, 15, 0.425);
+    padding-top: 30px;
+}
+
+#error_explanation {
+    color: red;
 }

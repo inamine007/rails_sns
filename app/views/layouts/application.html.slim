@@ -8,10 +8,17 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-  .navbar.navbar-dark.bg-dark
-    .navbar-brand RailsSNS
+  .navbar.navbar-expand-md.navbar-dark.bg-dark
+    .navbar-brand= link_to 'RailsSNS', root_url, style: 'color:white; text-decoration:none;'
     ul.navbar-nav.ml-auto
-      li.nav-item= link_to '新規登録', new_user_path, class: 'btn btn-primary'
+      - if current_user
+        li.nav-item= link_to 'マイページ', mypage_user_path(current_user), class: 'nav-link'
+        li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
+        li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+      - else
+        li.nav-item= link_to '新規登録', new_user_path, class: 'btn btn-primary'
+        li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-success ml-3'
+
   .container
     - if flash.notice.present?
       .alert.alert-success= flash.notice

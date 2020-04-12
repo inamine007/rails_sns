@@ -1,7 +1,9 @@
 h1.page-title 新規登録
 
-.nav.justify-content-end
-    = link_to 'ユーザー一覧', users_path, class: 'nav-link'
+- if @user.errors.present?
+    ul#error_explanation
+        - @user.errors.full_messages.each do |message|
+            li= message
 
 = form_with model: @user, local: true do |f|
     .form-group

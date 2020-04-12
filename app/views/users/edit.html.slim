@@ -1,2 +1,28 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+h1.page-title ユーザー編集
+
+.nav.justify-content-end
+    = link_to 'ユーザー一覧', users_path, class: 'nav-link'
+
+= form_with model: @user, local: true do |f|
+    .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', id: 'user_name'
+    .form-group
+        = f.label :mail
+        = f.text_field :mail, class: 'form-control', id: 'user_mail'
+    .form-group
+        = f.label :image
+        = f.file_field :image, class: 'form-control', id: 'user_image'
+    .form-group
+        = f.label :birthday
+        = f.text_field :birthday, class: 'form-control', id: 'user_birthday'
+    .form-group
+        = f.label :introduce
+        = f.text_area :introduce, class: 'form-control', id: 'user_introduce'
+    .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control', id: 'user_password'
+    .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'form-control', id: 'user_password_confirmation'
+    = f.submit nil, class: 'btn btn-primary'

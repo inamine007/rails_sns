@@ -1,7 +1,5 @@
-h1.page-title ユーザー詳細
+h1.page-title マイページ
 
-.nav.justify-content-end
-    = link_to '一覧', users_path, class: 'nav-link'
 table.table.table-hover
     tbody
         tr
@@ -25,3 +23,5 @@ table.table.table-hover
         tr
             th= User.human_attribute_name(:updated_at)
             td= @user.updated_at
+= link_to '編集', edit_user_path(@user), class: 'btn btn-primary mr-3'
+= link_to '削除', @user, method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
