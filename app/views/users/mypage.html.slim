@@ -12,6 +12,9 @@ table.table.table-hover
             th= User.human_attribute_name(:name)
             td= @user.name
         tr
+            th= User.human_attribute_name(:mail)
+            td= @user.mail
+        tr
             th= User.human_attribute_name(:birthday)
             td= @user.birthday
         tr
@@ -19,9 +22,24 @@ table.table.table-hover
             td= @user.introduce
         tr
             th= User.human_attribute_name(:created_at)
-            td= @user.created_at
+            td= l @user.created_at
         tr
             th= User.human_attribute_name(:updated_at)
-            td= @user.updated_at
-= link_to '編集', edit_user_path(@user), class: 'btn btn-primary mr-3'
-= link_to '削除', @user, method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+            td= l @user.updated_at
+= render partial: 'stats', locals: { user: @user }
+.d-flex.justify-content-end
+    = link_to '編集', edit_user_path(@user), class: 'btn btn-primary mr-3'
+    = link_to '削除', @user, method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
+h1.mt-5 タイムライン
+.mb-3
+table.table.table-hover
+    thead.thead-default
+        tr
+            th= Post.human_attribute_name(:title)
+            th= Post.human_attribute_name(:created_at)
+    tbody
+        - @posts.each do |post|
+            tr
+                td= link_to post.title, post
+                td= l post.created_at

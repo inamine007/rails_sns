@@ -1,0 +1,28 @@
+h1.page-title つぶやき詳細
+
+.nav.justify-content-end
+    = link_to '一覧', posts_path, class: 'nav-link'
+table.table.table-hover
+    tbody
+        tr
+            th= Post.human_attribute_name(:title)
+            td= @post.title
+        tr
+            th= Post.human_attribute_name(:content)
+            td= simple_format(h(@post.content), {}, sanitize: false, wrapper_tag: "div")
+        tr
+            th= Post.human_attribute_name(:image)
+            td= image_tag @post.image, size: '480x480' if @post.image.attached?
+= render partial: 'likes/like_button', locals: { post: @post }
+- if @post.user.id == current_user.id
+    = link_to '編集', edit_post_path, class: 'btn btn-primary mr-3'
+    = link_to '削除', @post, method: :delete, data: { confirm: "「#{@post.title}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
+= form_with model: [@post, @comment], local: true do |f|
+    = f.text_area :content, class: 'form-control mt-5', rows: 5
+    = f.submit 'コメント', class: 'btn btn-primary mt-3'
+
+- @comments.each do |c|
+    ul.list-group.mt-3
+        li.list-group-item= link_to c.user.name, user_path(c.user)
+        li.list-group-item= c.content

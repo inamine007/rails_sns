@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
   activerecord:
     errors:
       messages:
@@ -18,5 +21,14 @@ ja:
         image: 画像
         birthday: 誕生日
         introduce: 自己紹介
+        follower: フォロワー
+        following: フォロー中
         created_at: 登録日時
+        updated_at: 更新日時
+      post:
+        id: ID
+        title: タイトル
+        content: 内容
+        image: 画像
+        created_at: 作成日時
         updated_at: 更新日時

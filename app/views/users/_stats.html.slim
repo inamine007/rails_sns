@@ -1,0 +1,4 @@
+.stats
+    フォロー中=link_to @user.followings.count, following_user_path(user), class: 'mr-3'
+    フォロワー=link_to @user.followers.count, followers_user_path(user)
+        

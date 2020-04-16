@@ -12,6 +12,8 @@ html
     .navbar-brand= link_to 'RailsSNS', root_url, style: 'color:white; text-decoration:none;'
     ul.navbar-nav.ml-auto
       - if current_user
+        li.nav-item= link_to 'つぶやく', new_post_path, class: 'nav-link'
+        li.nav-item= link_to 'つぶやき一覧', posts_path, class: 'nav-link'
         li.nav-item= link_to 'マイページ', mypage_user_path(current_user), class: 'nav-link'
         li.nav-item= link_to 'ユーザー一覧', users_path, class: 'nav-link'
         li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
@@ -20,6 +22,8 @@ html
         li.nav-item= link_to 'ログイン', login_path, class: 'btn btn-success ml-3'
 
   .container
-    - if flash.notice.present?
-      .alert.alert-success= flash.notice
+    - flash.each do |key,value|
+      - key = "info" if key == "notice"
+      - key = "danger" if key == "alert" 
+      = content_tag :div, value, class: "alert alert-#{key}"
     = yield

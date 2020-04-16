@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.recent
   end
 
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
-    # @user = User.find(params[:id])
+    @posts = current_user.posts.all.recent
   end
 
   def new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     # user = User.find(params[:id])
     @user.update!(user_params)
-    redirect_to user_url(@user), notice: "ユーザー「#{@user.name}」を更新しました。"
+    redirect_to mypage_user_path(@user), notice: "ユーザー「#{@user.name}」を更新しました。"
   end
 
   def destroy
@@ -47,14 +47,26 @@ class UsersController < ApplicationController
     redirect_to root_url, notice: "ユーザー「#{@user.name}」を削除しました。"
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.followings
+    render 'show_follow'
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_followers'
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :mail, :image, :password, :password_confirmation)
+    params.require(:user).permit(:name, :mail, :image, :birthday, :introduce, :password, :password_confirmation)
   end
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to root_url unless current_user.id == @user.id
+    redirect_to root_url, alert: "権限がありません" unless current_user.id == @user.id
   end
 end

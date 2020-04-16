@@ -11,7 +11,7 @@ table.table.table-hover
         - @users.each do |user|
             tr
                 td= link_to user.name, user
-                td= user.created_at
+                td= l user.created_at
                 - if user.id == current_user.id
                     td
                       = link_to '編集', edit_user_path(user), class: 'btn btn-primary mr-3'
