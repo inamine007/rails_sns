@@ -80,6 +80,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: rails_sns_production
   username: rails_sns
   password: <%= ENV['RAILS_SNS_DATABASE_PASSWORD'] %>
