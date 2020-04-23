@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to mypage_user_path(user), notice: 'ログインしました。'
     else
+      flash.now[:alert] = "メールアドレスまたはパスワードが無効です。"
       render :new
     end
   end

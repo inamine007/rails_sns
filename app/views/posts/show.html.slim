@@ -19,10 +19,13 @@ table.table.table-hover
         = link_to '削除', @post, method: :delete, data: { confirm: "「#{@post.title}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
 
 = form_with model: [@post, @comment], local: true do |f|
-    = f.text_area :content, class: 'form-control mt-5', rows: 5
+    = f.text_area :content, class: 'form-control mt-5', rows: 5, id: 'textarea1'
     = f.submit 'コメント', class: 'btn btn-primary mt-3'
 
 - @comments.each do |c|
     ul.list-group.mt-3
         li.list-group-item= link_to c.user.name, user_path(c.user)
         li.list-group-item= c.content
+        - if c.user_id == current_user.id
+            .d-flex.justify-content-end
+                =link_to '削除', post_comment_path(@post, c), method: :delete, class: 'btn btn-danger'

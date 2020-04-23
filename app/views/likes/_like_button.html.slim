@@ -1,6 +1,6 @@
 
 - if current_user.already_liked?(@post)
-    = button_to 'いいね解除', post_like_path(@post), method: :delete
+    = button_to 'いいね解除', post_like_path(@post), method: :delete, class: 'btn btn-light test'
 - else
-    = button_to 'いいね!', post_likes_path(@post)
+    = button_to 'いいね!', post_likes_path(@post), class: 'btn btn-light test'
 =@post.likes.count

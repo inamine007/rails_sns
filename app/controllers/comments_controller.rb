@@ -7,9 +7,16 @@ class CommentsController < ApplicationController
             flash[:notice] = "コメントしました"
             redirect_back(fallback_location: root_path)
         else
-            flash[:notice] = "コメントできませんでした"
+            flash[:alert] = "コメントできませんでした"
             redirect_back(fallback_location: root_path)
         end
+    end
+
+    def destroy
+        @comment = Comment.find(params[:id])
+        @comment.destroy
+        flash.now[:notice] = "コメントを削除しました"
+        redirect_back(fallback_location: root_path)
     end
 
     private

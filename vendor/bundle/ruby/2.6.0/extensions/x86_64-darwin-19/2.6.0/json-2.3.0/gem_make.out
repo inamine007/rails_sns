@@ -1,0 +1,13 @@
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+/Users/inaminehiroyuki/.rbenv/versions/2.6.3/bin/ruby -I /Users/inaminehiroyuki/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200417-43278-186l5df.rb extconf.rb
+creating Makefile
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/inaminehiroyuki/Desktop/Ruby_on_Rails/rails_sns/vendor/bundle/ruby/2.6.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" install
