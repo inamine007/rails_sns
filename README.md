@@ -20,5 +20,5 @@ Ruby on Rails を使って簡易SNS制作。練習用。
 # その他
 ・　RSpec　を使ってテストを書く。
 
-・　出来たらHeroku を使ってデプロイする。
-
+・　Heroku を使ってデプロイする。
+    https://floating-tor-94827.herokuapp.com
